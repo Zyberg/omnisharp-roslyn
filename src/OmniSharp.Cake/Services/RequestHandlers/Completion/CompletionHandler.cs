@@ -48,7 +48,8 @@ namespace OmniSharp.Cake.Services.RequestHandlers.Completion
             // Revisit when we have a solution. At this point it's probably just best to remove AdditionalTextEdits.
             if (response.Item is object)
             {
-                response.Item.AdditionalTextEdits = null;
+                // TODO: this is a quick-fix as per https://github.com/OmniSharp/omnisharp-roslyn/issues/2474
+                //response.Item.AdditionalTextEdits = null;
             }
 
             return Task.FromResult(response);
